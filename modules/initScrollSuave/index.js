@@ -14,19 +14,22 @@ export default class ScrollSuave {
     this.scrollToSection = this.scrollToSection.bind(this)
   }
 
-  static scrollToSection(event) {
+  // método para dar o efeito de rolagem
+  scrollToSection(event) {
     event.preventDefault()
     const href = event.currentTarget.getAttribute('href')
     const section = document.querySelector(href)
     section.scrollIntoView(this.options)
   }
 
+  // adiciona o evento de click
   addLinkEvent() {
     this.linksInternos.forEach((link) => {
       link.addEventListener('click', this.scrollToSection)
     })
   }
 
+  // inicia o método
   init() {
     if (this.linksInternos.lenght) {
       this.addLinkEvent()
