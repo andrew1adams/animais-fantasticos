@@ -1,6 +1,7 @@
 import ScrollSuave from './modules/initScrollSuave/index.js';
+import Accordion from './modules/initAccordion/index.js';
+
 import { changeClasses } from './modules/changeClasses/index.js';
-import { initAccordion } from './modules/initAccordion/index.js';
 import { initAnimationScroll } from './modules/initAnimationScroll/index.js';
 import { initTabNav } from './modules/initTabNav/index.js';
 import { initModal } from './modules/initModal/index.js';
@@ -19,8 +20,10 @@ const options = {
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]', options)
 scrollSuave.init()
 
+const accordion = new Accordion('[data-anime="accordion"] dt')
+accordion.init()
+
 changeClasses();
-initAccordion();
 initAnimationScroll();
 initTabNav();
 initModal();
