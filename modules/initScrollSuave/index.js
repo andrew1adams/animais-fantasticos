@@ -1,26 +1,36 @@
-export function initScrollSuave() {
-  const linksInternos = document.querySelectorAll('[data-menu="suave"] a[href^="#"]')
+export default class ScrollSuave {
+  constructor(links, options) {
+    this.linksInternos = document.querySelectorAll(links)
 
-  function scrollToSection() {
-    const href = this.getAttribute('href')
-    const section = document.querySelector(href)
+    if (options === undefined) {
+      this.options = {
+        behavior: 'smooth',
+        block: 'start',
+      }
+    } else {
+      this.options = options
+    }
 
-    section.scrollIntoView({
-      block: 'start',
-      behavior: 'smooth',
-    })
-
-    // const top = section.offsetTop
-
-    // window.scrollTo({
-    //   top: top,
-    //   behavior: "smooth"
-    // }) //v1
-
-    // NENHUMA DESSAS PORRA FUNCIONA
+    this.scrollToSection = this.scrollToSection.bind(this)
   }
 
-  linksInternos.forEach((link) => {
-    link.addEventListener('click', scrollToSection)
-  })
+  static scrollToSection(event) {
+    event.preventDefault()
+    const href = event.currentTarget.getAttribute('href')
+    const section = document.querySelector(href)
+    section.scrollIntoView(this.options)
+  }
+
+  addLinkEvent() {
+    this.linksInternos.forEach((link) => {
+      link.addEventListener('click', this.scrollToSection)
+    })
+  }
+
+  init() {
+    if (this.linksInternos.lenght) {
+      this.addLinkEvent()
+    }
+    return this
+  }
 }
