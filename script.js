@@ -3,13 +3,13 @@ import Accordion from './modules/initAccordion/index.js';
 import TabNav from './modules/initTabNav/index.js';
 import Modal from './modules/initModal/index.js';
 import ToolTip from './modules/initToolTip/index.js';
+import { initFetchAnimals } from './modules/initFetchAnimals/index.js';
 
 import { changeClasses } from './modules/changeClasses/index.js';
 import { initAnimationScroll } from './modules/initAnimationScroll/index.js';
 import { dropDownMenu } from './modules/dropDownMenu/index.js';
 import { initMenuMobile } from './modules/initMenuMobile/index.js';
 import { initWork } from './modules/initWork/index.js';
-import { initFetchAnimals } from './modules/initFetchAnimals/index.js';
 import { initFetchBitcoin } from './modules/initFetchBitcoin/index.js';
 
 const options = {
@@ -37,5 +37,6 @@ initAnimationScroll();
 dropDownMenu();
 initMenuMobile();
 initWork();
-initFetchAnimals();
 initFetchBitcoin();
+
+initFetchAnimals('./data/animalsapi.json', '.numeros-grid');

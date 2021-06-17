@@ -1,6 +1,7 @@
 import AnimaNumber from '../initAnimaNumber/index.js'
 
-export function initFetchAnimals() {
+export function initFetchAnimals(url, target) {
+  // cria a div com as informações dos animais
   function createAnimal(animal) {
     const div = document.createElement('div')
     div.classList.add('numero-animal')
@@ -8,21 +9,33 @@ export function initFetchAnimals() {
     return div
   }
 
-  async function fetchAnimals(url) {
+  const numberGrid = document.querySelector(target)
+
+  // completa as lacunas com os animais
+  function fillAnimals(animal) {
+    const divAnimal = createAnimal(animal)
+    numberGrid.appendChild(divAnimal)
+  }
+
+  function initAnimaNumber() {
+    const animaNumber = new AnimaNumber('[data-numero]', '.numeros', 'ativo')
+    animaNumber.init()
+  }
+
+  // consome a api utilizando os dados obtidos e cria os animais com a function acima
+  // método utilizado foi o async await
+  async function createAnimals() {
     try {
       const animalsResponse = await fetch(url)
       const animalsJSON = await animalsResponse.json()
-      const numberGrid = document.querySelector('.numeros-grid')
       animalsJSON.forEach((animal) => {
-        const divAnimal = createAnimal(animal)
-        numberGrid.appendChild(divAnimal)
+        fillAnimals(animal)
       })
-      const animaNumber = new AnimaNumber('[data-numero]', '.numeros', 'ativo')
-      animaNumber.init()
+      initAnimaNumber()
     } catch (error) {
       console.log(Error(error))
     }
   }
 
-  fetchAnimals('./data/animalsapi.json')
+  return createAnimals()
 }
