@@ -24,5 +24,6 @@ export default class Accordion {
       this.addAccordionEvent()
       this.toggleAccordion(this.accordionList[0])
     }
+    return this
   }
 }
