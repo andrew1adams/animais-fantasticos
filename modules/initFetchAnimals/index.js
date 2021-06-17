@@ -1,4 +1,4 @@
-import { initAnimaNumber } from '../initAnimaNumber/index.js'
+import AnimaNumber from '../initAnimaNumber/index.js'
 
 export function initFetchAnimals() {
   function createAnimal(animal) {
@@ -17,8 +17,8 @@ export function initFetchAnimals() {
         const divAnimal = createAnimal(animal)
         numberGrid.appendChild(divAnimal)
       })
-
-      initAnimaNumber()
+      const animaNumber = new AnimaNumber('[data-numero]', '.numeros', 'ativo')
+      animaNumber.init()
     } catch (error) {
       console.log(Error(error))
     }
