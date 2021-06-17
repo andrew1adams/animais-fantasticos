@@ -37,6 +37,6 @@ initAnimationScroll();
 dropDownMenu();
 initMenuMobile();
 initWork();
-initFetchBitcoin();
 
 initFetchAnimals('./data/animalsapi.json', '.numeros-grid');
+initFetchBitcoin('https://blockchain.info/ticker', '.btc-preco');
