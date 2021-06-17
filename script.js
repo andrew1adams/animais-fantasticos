@@ -1,9 +1,9 @@
 import ScrollSuave from './modules/initScrollSuave/index.js';
 import Accordion from './modules/initAccordion/index.js';
+import TabNav from './modules/initTabNav/index.js';
 
 import { changeClasses } from './modules/changeClasses/index.js';
 import { initAnimationScroll } from './modules/initAnimationScroll/index.js';
-import { initTabNav } from './modules/initTabNav/index.js';
 import { initModal } from './modules/initModal/index.js';
 import { initToolTip } from './modules/initToolTip/index.js';
 import { dropDownMenu } from './modules/dropDownMenu/index.js';
@@ -23,9 +23,11 @@ scrollSuave.init()
 const accordion = new Accordion('[data-anime="accordion"] dt')
 accordion.init()
 
+const tabNav = new TabNav('[data-tab="menu"] li', '[data-tab="content"] section')
+tabNav.init()
+
 changeClasses();
 initAnimationScroll();
-initTabNav();
 initModal();
 initToolTip();
 dropDownMenu();
