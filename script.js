@@ -6,12 +6,11 @@ import ToolTip from './modules/initToolTip/index.js';
 import AnimationScroll from './modules/initAnimationScroll/index.js';
 import DropDownMenu from './modules/dropDownMenu/index.js';
 import MenuMobile from './modules/initMenuMobile/index.js';
+import Work from './modules/initWork/index.js';
 
 import { initFetchAnimals } from './modules/initFetchAnimals/index.js';
 import { initFetchBitcoin } from './modules/initFetchBitcoin/index.js';
-
 import { changeClasses } from './modules/changeClasses/index.js';
-import { initWork } from './modules/initWork/index.js';
 
 const options = {
   behavior: 'smooth',
@@ -42,8 +41,9 @@ dropDownMenu.init()
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init()
 
-changeClasses();
-initWork();
+const works = new Work('[data-semana]');
+works.init()
 
+changeClasses();
 initFetchAnimals('./data/animalsapi.json', '.numeros-grid');
 initFetchBitcoin('https://blockchain.info/ticker', '.btc-preco');
