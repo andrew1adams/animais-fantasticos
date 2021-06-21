@@ -31,7 +31,7 @@
         </li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a href="#modal" data-modal="abrir">Login</a></li>
+        <li><a href="#modal" data-modal="abrir">Login <span class="arrowBlack"></span></a></li>
       </ul>
     </nav>
     <section class="grid-section animais" id="animais" data-anime="scroll">
@@ -165,6 +165,27 @@
       </dl>
     </section>
 
+    <section class="grid-section galeria" data-anime="scroll">
+      <ul class="customControl">
+        <li><img src="./img/slide/foto1-thumb.jpg" alt=""></li>
+        <li><img src="./img/slide/foto2-thumb.jpg" alt=""></li>
+        <li><img src="./img/slide/foto3-thumb.jpg" alt=""></li>
+        <li><img src="./img/slide/foto4-thumb.jpg" alt=""></li>
+        <li><img src="./img/slide/foto5-thumb.jpg" alt=""></li>
+        <li><img src="./img/slide/foto6-thumb.jpg" alt=""></li>
+      </ul>
+      <div class="slideWrapper">
+        <ul class="slide">
+          <li><img src="./img/slide/foto1.jpg" alt=""></li>
+          <li><img src="./img/slide/foto2.jpg" alt=""></li>
+          <li><img src="./img/slide/foto3.jpg" alt=""></li>
+          <li><img src="./img/slide/foto4.jpg" alt=""></li>
+          <li><img src="./img/slide/foto5.jpg" alt=""></li>
+          <li><img src="./img/slide/foto6.jpg" alt=""></li>
+        </ul>
+      </div>
+    </section>
+
     <section class="grid-section numeros" data-anime="scroll">
       <h1 class="titulo">Números</h1>
       <div class="numeros-grid">
@@ -218,7 +239,7 @@
 
   <section class="modal-container" id="modal">
     <div class="modal">
-      <button data-modal="fechar" class="fechar">X</button>
+      <button data-modal="fechar" class="fechar"></button>
       <form action="">
         <label for="email">E-mail:</label>
         <input type="text" for="email" id='email' placeholder="Usuário ou e-mail">
@@ -228,7 +249,7 @@
       </form>
     </div>
   </section>
-  <script src="./main.js/main.js"></script>
+  <script src="./main.js"></script>
 </body>
 
 </html>
