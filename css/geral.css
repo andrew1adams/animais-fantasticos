@@ -70,7 +70,7 @@ body {
   line-height: 1;
   font-weight: normal;
   margin-bottom: 1rem;
-  grid-column: 1 / 4;
+  grid-column: 1 / 4; 
 }
 
 .animais h2 {
