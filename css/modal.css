@@ -17,11 +17,14 @@
 
 .modal {
   background: #fff;
-  padding: 5rem;
+  width: 80vw;
+  max-width: 500px;
+  padding: 2rem;
   border: 10px solid #fb5;
   box-shadow: 0 0 0 10px #fff;
   position: relative;
-  border-radius: 50%;
+  border-radius: 1px;
+  box-sizing: border-box;
 }
 
 @keyframes modal {
@@ -39,21 +42,16 @@
   animation: modal .3s forwards;
 }
 
-
-
 .fechar {
-  top: -20px;
-  right: -20px;
+  top: -35px;
+  right: -35px;
   position: absolute;
   width: 50px;
   height: 50px;
   border: #fff;
   border-radius: 50%;
-  font-size: 2rem;
-  color: #fff;
-  font-family: 'IBM Plex Mono', monospace;
   cursor: pointer;
-  background: #fb5;
+  background: #fb5 url('../img/fechar.svg') no-repeat center center;
 }
 
 .modal label {
@@ -67,7 +65,7 @@
   width: 100%;
   padding: .7rem .5rem;
   box-sizing: border-box;
-  border-radius: .5rem;
+  border-radius: .1rem;
   border: 1px solid rgba(0,0,0,.2);
 }
 
