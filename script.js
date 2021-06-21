@@ -7,6 +7,7 @@ import AnimationScroll from './modules/initAnimationScroll/index.js';
 import DropDownMenu from './modules/dropDownMenu/index.js';
 import MenuMobile from './modules/initMenuMobile/index.js';
 import Work from './modules/initWork/index.js';
+import SlideNav from './modules/slide/index.js'
 
 import { initFetchAnimals } from './modules/initFetchAnimals/index.js';
 import { initFetchBitcoin } from './modules/initFetchBitcoin/index.js';
@@ -47,3 +48,7 @@ works.init()
 changeClasses();
 initFetchAnimals('./data/animalsapi.json', '.numeros-grid');
 initFetchBitcoin('https://blockchain.info/ticker', '.btc-preco');
+
+const slide = new SlideNav('.slide', '.slideWrapper')
+slide.init()
+slide.addControlEvents('.customControl')
